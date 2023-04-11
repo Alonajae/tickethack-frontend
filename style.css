@@ -1,12 +1,12 @@
-body{
+body {
     margin: 0vh;
     padding: 0vh;
 }
 
 #container-home {
     display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(19, 1fr);
+    grid-template-rows: repeat(16, 1fr);
     background-image: url('./images/background.jpg');
     background-position: center center;
     background-size: cover;
@@ -18,7 +18,7 @@ body{
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 1;
-    grid-column-end: 21;
+    grid-column-end: 20;
     display: flex;
     justify-content: space-between;
 }
@@ -33,7 +33,7 @@ body{
     grid-row-start: 2;
     grid-row-end: 4;
     grid-column-start: 1;
-    grid-column-end: 21;
+    grid-column-end: 20;
     color: white;
     display: flex;
     flex-direction: column;
@@ -47,9 +47,9 @@ body{
     flex-direction: column;
     justify-content: space-between;
     grid-row-start: 5;
-    grid-row-end: 14;
+    grid-row-end: 13;
     grid-column-start: 4;
-    grid-column-end: 9;
+    grid-column-end: 10;
     border-radius: 5%;
     padding: 9px;
 }
@@ -57,18 +57,60 @@ body{
 #results {
     background-color: white;
     grid-row-start: 5;
-    grid-row-end: 14;
-    grid-column-start: 12;
+    grid-row-end: 13;
+    grid-column-start: 11;
     grid-column-end: 17;
     border-radius: 5%;
 }
+
 #trajet {
     display: flex;
     flex-direction: column;
 }
+
 #results {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#search-btn {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 3%;
+}
+
+input[type=text] {
+    border: none;
+    background-color: lightgrey;
+    color: dimgray;
+    border-radius: 5%;
+    border-bottom: 1px solid darkgrey;
+    height: 8vh;
+    margin: 2px;
+}
+
+input[type=date]{
+    border: none;
+    height: 8vh;
+    margin-bottom: 20vh;
+    background-color: lightgrey;
+    color: dimgray;
+    font-size: x-large;
+    border-radius: 5%;
+}
+
+#btn-cart {
+    border: none;
+}
+#btn-bookings {
+    border: none;
 }
