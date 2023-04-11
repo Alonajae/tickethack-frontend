@@ -1,16 +1,17 @@
 body{
-    background-image: url('./images/background.jpg');
-    background-position: center center;
-    background-size: cover;
     margin: 0vh;
     padding: 0vh;
 }
 
-#container {
+#container-home {
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(20, 1fr);
+    background-image: url('./images/background.jpg');
+    background-position: center center;
+    background-size: cover;
 }
+
 
 #header {
     background-color: white;
