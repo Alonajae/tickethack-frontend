@@ -52,6 +52,7 @@ body{
     grid-column-start: 4;
     grid-column-end: 9;
     border-radius: 5%;
+    padding: 9px;
 }
 
 #results {
@@ -61,4 +62,8 @@ body{
     grid-column-start: 12;
     grid-column-end: 17;
     border-radius: 5%;
+}
+#trajet {
+    display: flex;
+    flex-direction: column;
 }

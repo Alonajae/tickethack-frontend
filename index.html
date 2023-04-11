@@ -27,13 +27,12 @@
             <p>Compare , book and enjoy cheap prices for train tickets: your journer starts on Tickethack</p>
         </div>
         <form id="search-form">
-            <label for="departure">Départ:</label>
-            <input type="text" id="departure" name="departure" required>
-            <label for="arrival">Arrivée:</label>
-            <input type="text" id="arrival" name="arrival" required>
-            <label for="date">Date:</label>
+            <div id="trajet">
+                <input id="departure" type="text" placeholder="Departure" />
+                <input id="arrival" type="text" placeholder="Arrival" />
+            </div>
             <input type="date" id="date" name="date" required>
-            <button type="submit">Rechercher</button>
+            <button type="submit">Search</button>
         </form>
         <div id="results"></div>
 
