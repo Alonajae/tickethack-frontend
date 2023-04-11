@@ -4,7 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 
     <title>Tickethack</title>
 </head>
@@ -16,9 +23,11 @@
                 <h1 id="header-title"><a href="./index.html">Tickethack</a></h1>
             </div>
             <div id="left-block">
-                <button id="btn-cart" type="button">Cart</button>
-                <button id="btn-bookings" type="button">Bookings</button>
+                <span id="btn-cart"><a href="cart.html">Cart</a></span>
+                <span id="btn-bookings"><a href="booking.html">Bookings</a></span>
+
             </div>
+           
         </div>
 
 
@@ -29,15 +38,22 @@
         <form id="search-form">
             <div id="trajet">
                 <input id="departure" type="text" placeholder="Departure" required>
+                <div class="line"></div>
                 <input id="arrival" type="text" placeholder="Arrival" required>
             </div>
-            <input type="date" id="date" name="date" required>
+            <div class="date-container">
+                <input type="text" id="date" name="date" class="date-picker" placeholder="dd/mm/yyyy" required>
+                <i class="fas fa-calendar-alt calendar-icon"></i>
+
+            </div>
+            
             <button id="search-btn" type="submit">Search</button>
         </form>
         <div id="results">
             <div id="img-container">
                 <img src="./images/train.png">
             </div>
+            <div class="green-line"></div>
             <h3>It's time to book your future trip.</h3>
         </div>
 
