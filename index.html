@@ -10,14 +10,14 @@
 </head>
 
 <body>
-    <div id="container">
+    <div id="container-home">
         <div id="header">
             <div id='title'>
-                <h1 id="header-title">Tickethack</h1>
+                <h1 id="header-title"><a href="./index.html">Tickethack</a></h1>
             </div>
             <div id="left-block">
-                <button class="header-btn" type="button">Cart</button>
-                <button class="header-btn" type="button">Booking</button>
+                <button id="btn-cart" type="button">Cart</button>
+                <button class="btn-bookings" type="button">Bookings</button>
             </div>
         </div>
 
@@ -27,15 +27,22 @@
             <p>Compare , book and enjoy cheap prices for train tickets: your journer starts on Tickethack</p>
         </div>
         <form id="search-form">
-            <label for="departure">Départ:</label>
-            <input type="text" id="departure" name="departure" required>
-            <label for="arrival">Arrivée:</label>
-            <input type="text" id="arrival" name="arrival" required>
-            <label for="date">Date:</label>
+            <div id="trajet">
+                <input id="departure" type="text" placeholder="Departure" />
+                <input id="arrival" type="text" placeholder="Arrival" />
+            </div>
             <input type="date" id="date" name="date" required>
-            <button type="submit">Rechercher</button>
+            <button type="submit">Search</button>
         </form>
-        <div id="results"></div>
+        <div id="results">
+            <div id="img-container">
+                <img src="./images/train.png">
+            </div>
+            <div id="message">
+                <p>----------------------------------------------</p>
+                <h3>It's time to book your future trip.</h3>
+            </div>
+        </div>
 
 
 
