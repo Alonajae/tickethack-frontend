@@ -4,7 +4,7 @@ async function getBookings() {
     displayBookings(bookings);
   }
   
-  function displayBookings(bookings) {
+  function displayBookings(booking) {
     const bookingsElement = document.getElementById("bookings");
     bookingsElement.innerHTML = "";
   }
