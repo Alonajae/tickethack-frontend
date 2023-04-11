@@ -1,19 +1,29 @@
-body {background-image: url('background.jpg');
-    background-position: center center;
-    background-size: cover;}
+body 
     #container {
         display: grid;
     }
+    #content-home {background-image: url('./images/background.jpg');
+        background-position: center center;
+        background-size: cover;}
+        #container {
+
+    }
+
     #assets-list {
         display : flex;
         justify-content: space-around;
      }
-     
-     
+     #description {
+        color: white;
+     }
 
 
-    #assets-list {
+    #search-form {
+        border: ;
         display: flex;
         justify-content: center;
         align-items: center;
+     }
+     #result {
+        
      }
