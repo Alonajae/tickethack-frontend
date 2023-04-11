@@ -1,0 +1,19 @@
+body {background-image: url('background.jpg');
+    background-position: center center;
+    background-size: cover;}
+    #container {
+        display: grid;
+    }
+    #assets-list {
+        display : flex;
+        justify-content: space-around;
+     }
+     
+     
+
+
+    #assets-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
