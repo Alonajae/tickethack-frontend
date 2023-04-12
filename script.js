@@ -3,22 +3,6 @@ flatpickr('.date-picker', {
 });
 
 let results = document.querySelector("#results")
-/*
-function addBookEvent() {
-    let bookBtns = document.querySelectorAll('.book-btn')
-    for (let i = 0; i < bookBtns.length; i++) {
-        bookBtns[i].addEventListener('click', function () {
-            const newBook = new Cart({
-                departure: a,
-                arrival: b,
-                date: c,
-                price: d
-            })
-            newBook.save()
-        });
-    }
-}
-*/
 
 document.querySelector("#search-btn").addEventListener("click", () => {
     let departure = document.getElementById("departure").value;
@@ -48,7 +32,7 @@ document.querySelector("#search-btn").addEventListener("click", () => {
                 let bookBtns = document.querySelectorAll('.book-btn')
                 for (let j = 0; j < bookBtns.length; j++) {
                     bookBtns[j].addEventListener('click', function () {
-                        fetch('http://localhost:3000/carts', {
+                        fetch('http://localhost:3000/cart', {
 
                             method: 'POST',
                     
@@ -57,8 +41,9 @@ document.querySelector("#search-btn").addEventListener("click", () => {
                             body: JSON.stringify({ departure: departure, arrival: arrival, date: data.allTrips[j].date, price: data.allTrips[j].price })
                     
                         })
+                        .then(response => response.json())
                         .then(data => {
-                            
+                            console.log(data)
                         })
                     });
                 }
