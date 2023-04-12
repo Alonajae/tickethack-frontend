@@ -3,7 +3,7 @@ flatpickr('.date-picker', {
 });
 
 let results = document.querySelector("#results")
-
+/*
 function addBookEvent(a, b, c, d, list) {
     let bookBtns = document.querySelectorAll('.book-btn')
     for (let i = 0; i < bookBtns.length; i++) {
@@ -18,6 +18,7 @@ function addBookEvent(a, b, c, d, list) {
         });
     }
 }
+*/
 
 document.querySelector("#search-btn").addEventListener("click", () => {
     let departure = document.getElementById("departure").value;
