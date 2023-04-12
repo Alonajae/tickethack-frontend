@@ -26,8 +26,8 @@
 fetch('http://localhost:3000/cart')
   .then(response => response.json())
   .then(data => {
-    console.log(data)
     if (data.cart.length !== 0) {
+      document.querySelector('#ticket-container').innerHTML=""
       let sum = 0;
       for (let i = 0; i < data.cart; i++) {
         document.querySelector("#ticket-container").innerHTML += `
