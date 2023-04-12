@@ -2,31 +2,39 @@ flatpickr('.date-picker', {
     dateFormat: 'd/m/Y'
 });
 
-document.querySelector("#search-btn").addEventListener("click", async (e) => {
-   
-});
+const results = document.getElementById("results");
+const departure = document.getElementById("departure").value;
+const arrival = document.getElementById("arrival").value;
+const date = document.getElementById("date").value;
 
-function displayResults(trips) {
-    const results = document.getElementById("results");
-    results.innerHTML = "";
+document.querySelector("#search-btn").addEventListener("click", () => {
     fetch('http://localhost:3000/trips', {
 
         method: 'POST',
 
         headers: { 'Content-Type': 'application/json' },
 
-        body: JSON.stringify(data)
+        body: JSON.stringify({ departure: departure, arrival: arrival, date: date })
 
     })
         .then(response => response.json())
         .then(data => {
-            data.forEach((trip) => {
-                const tripElement = document.createElement("div");
-                tripElement.textContent = `${trip.departure} - ${trip.arrival} (${trip.date})`;
-                results.appendChild(tripElement);
-            });
+            if (data) {
+                results.innerHTML = "";
+                data.forEach((trip) => {
+                    results.innerHTML += `
+                    <div class="trip-container"> 
+                    <p>${trip.departure} > ${trip.arrival}</p>
+                    <p>${trip.date}</p>
+                    <button class="book-btn" type=button>
+                    `
+                    tripElement.textContent = `${trip.departure} - ${trip.arrival} (${trip.date})`;
+                    results.appendChild(tripElement);
+                });
+            }
         })
-}
+});
+
 
 /*
  e.preventDefault();

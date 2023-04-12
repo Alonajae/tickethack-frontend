@@ -195,3 +195,12 @@ input[type=date]{
 .date-container {
     position: relative;
 }
+
+.book-btn {
+    background-color: #50c68b;
+    /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
