@@ -4,12 +4,19 @@ flatpickr('.date-picker', {
 
 let results = document.querySelector("#results")
 
-function addBookEvent() {
-	for (let i = 0; i < document.querySelectorAll('.book-btn').length; i++) {
-		document.querySelectorAll('.book-btn')[i].addEventListener('click', function () {
-			
-		});
-	}
+function addBookEvent(a, b, c, d) {
+    let bookBtns = document.querySelectorAll('.book-btn')
+    for (let i = 0; i < bookBtns.length; i++) {
+        bookBtns[i].addEventListener('click', function () {
+            const newBook = new Cart{
+                departure: a,
+                arrival: b,
+                date: c,
+                price: d
+            }
+            newBook.save()
+        });
+    }
 }
 
 document.querySelector("#search-btn").addEventListener("click", () => {
@@ -27,16 +34,16 @@ document.querySelector("#search-btn").addEventListener("click", () => {
     })
         .then(response => response.json())
         .then(data => {
-            if (data.result=== true) {
+            if (data.result === true) {
                 results.innerHTML = ""
-                for (let i=0; i< data.allTrips.length ; i++) {
+                for (let i = 0; i < data.allTrips.length; i++) {
                     results.innerHTML += `
                     <div class="trip-container"> 
                     <p>${data.allTrips[i].departure} > ${data.allTrips[i].arrival}  ${data.allTrips[i].date}  ${data.allTrips[i].price}€</p>
                     <button class="book-btn" type=button>Book</button>
                     </div>
                     `
-                    addBookEvent()
+                    addBookEvent(data.allTrips[i].departure, data.allTrips[i].arrival, data.allTrips[i].date, data.allTrips[i].price)
                 }
             } else {
                 results.innerHTML = `
