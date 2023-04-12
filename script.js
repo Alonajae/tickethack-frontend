@@ -2,12 +2,12 @@ flatpickr('.date-picker', {
     dateFormat: 'd/m/Y'
 });
 
-const results = document.getElementById("results");
-const departure = document.getElementById("departure").value;
-const arrival = document.getElementById("arrival").value;
-const date = document.getElementById("date").value;
+let results = document.querySelector("#results")
 
 document.querySelector("#search-btn").addEventListener("click", () => {
+    let departure = document.getElementById("departure").value;
+    let arrival = document.querySelector("#arrival").value;
+    let date = document.querySelector("#date").value;
     fetch('http://localhost:3000/trips', {
 
         method: 'POST',
@@ -19,18 +19,24 @@ document.querySelector("#search-btn").addEventListener("click", () => {
     })
         .then(response => response.json())
         .then(data => {
+            results.innerHTML = ""
             if (data) {
-                results.innerHTML = "";
                 data.forEach((trip) => {
                     results.innerHTML += `
                     <div class="trip-container"> 
-                    <p>${trip.departure} > ${trip.arrival}</p>
-                    <p>${trip.date}</p>
-                    <button class="book-btn" type=button>
+                    <p>${trip.departure} > ${trip.arrival}  ${trip.date}  ${trip.price}€</p>
+                    <button class="book-btn" type=button>Book</button>
+                    </div>
                     `
-                    tripElement.textContent = `${trip.departure} - ${trip.arrival} (${trip.date})`;
-                    results.appendChild(tripElement);
-                });
+                })
+            } else {
+                results.innerHTML += `
+                <div id="img-container">
+                <img src="./images/ntofound.png">
+                </div>
+                <div class="green-line"></div>
+                <h3>No trip found.</h3>
+                `
             }
         })
 });

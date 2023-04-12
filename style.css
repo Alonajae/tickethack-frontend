@@ -79,15 +79,6 @@ body {
     flex-direction: column;
     position: relative;
 }
-.line {
-    height: 1px;
-    background-color: black;
-    margin-top: -2px;
-    margin-bottom: 2px;
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 
 
@@ -113,7 +104,7 @@ body {
 
 input[type=text] {
     border: none;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.74);
     color: dimgray;
     border-radius: 5%;
     border-bottom: 1px solid darkgrey;
@@ -170,6 +161,7 @@ input[type=date]{
     width: 80%;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-radius: 20%;
 }
 
 .calendar-icon {

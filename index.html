@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <head>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
 
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 
-    <title>Tickethack</title>
-</head>
+        <title>Tickethack</title>
+    </head>
 
 <body>
     <div id="container-home">
@@ -27,7 +28,7 @@
                 <span id="btn-bookings"><a href="booking.html">Bookings</a></span>
 
             </div>
-           
+
         </div>
 
 
@@ -35,20 +36,19 @@
             <h1>Explore the world effortlessly by train !</h1>
             <p>Compare , book and enjoy cheap prices for train tickets: your journer starts on Tickethack</p>
         </div>
-        <form id="search-form">
+        <div id="search-form">
             <div id="trajet">
-                <input id="departure" type="text" placeholder="Departure" required>
-                <div class="line"></div>
-                <input id="arrival" type="text" placeholder="Arrival" required>
+                <input id="departure" type="text" placeholder="Departure">
+                <input id="arrival" type="text" placeholder="Arrival">
             </div>
             <div class="date-container">
-                <input type="text" id="date" name="date" class="date-picker" placeholder="dd/mm/yyyy" required>
+                <input type="text" id="date" name="date" class="date-picker" placeholder="dd/mm/yyyy">
                 <i class="fas fa-calendar-alt calendar-icon"></i>
 
             </div>
-            
-            <button id="search-btn" type="submit">Search</button>
-        </form>
+
+            <button id="search-btn" type="button">Search</button>
+        </div>
         <div id="results">
             <div id="img-container">
                 <img src="./images/train.png">
