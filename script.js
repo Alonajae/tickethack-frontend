@@ -1,5 +1,50 @@
-document.getElementById("search-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
+flatpickr('.date-picker', {
+    dateFormat: 'd/m/Y'
+});
+
+let results = document.querySelector("#results")
+
+document.querySelector("#search-btn").addEventListener("click", () => {
+    let departure = document.getElementById("departure").value;
+    let arrival = document.querySelector("#arrival").value;
+    let date = document.querySelector("#date").value;
+    fetch('http://localhost:3000/trips', {
+
+        method: 'POST',
+
+        headers: { 'Content-Type': 'application/json' },
+
+        body: JSON.stringify({ departure: departure, arrival: arrival, date: date })
+
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            if (data !== null) {
+                results.innerHTML = ""
+                for (let i=0; i< data.allTrips.length ; i++) {
+                    results.innerHTML += `
+                    <div class="trip-container"> 
+                    <p>${data.allTrips[i].departure} > ${data.allTrips[i].arrival}  ${data.allTrips[i].date}  ${data.allTrips[i].price}€</p>
+                    <button class="book-btn" type=button>Book</button>
+                    </div>
+                    `
+                }
+            } else {
+                results.innerHTML = `
+                <div id="img-container">
+                <img src="./images/ntofound.png">
+                </div>
+                <div class="green-line"></div>
+                <h3>No trip found.</h3>
+                `
+            }
+        })
+});
+
+
+/*
+ e.preventDefault();
     const departure = document.getElementById("departure").value;
     const arrival = document.getElementById("arrival").value;
     const date = document.getElementById("date").value;
@@ -8,19 +53,4 @@ document.getElementById("search-form").addEventListener("submit", async (e) => {
     const trips = await response.json();
 
     displayResults(trips);
-});
-
-function displayResults(trips) {
-    const results = document.getElementById("results");
-    results.innerHTML = "";
-
-    trips.forEach((trip) => {
-        const tripElement = document.createElement("div");
-        tripElement.textContent = `${trip.departure} - ${trip.arrival} (${trip.date})`;
-        results.appendChild(tripElement);
-    });
-}
-flatpickr('.date-picker', {
-    dateFormat: 'd/m/Y'
-  });
-  
+*/
