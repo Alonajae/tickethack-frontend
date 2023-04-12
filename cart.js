@@ -1,4 +1,4 @@
-async function getCart() {
+/*async function getCart() {
     const response = await fetch("/api/cart");
     const cart = await response.json();
     displayCart(cart);
@@ -21,4 +21,28 @@ async function getCart() {
   });
   
   getCart();
-  
+  */
+
+fetch('http://localhost:3000/cart')
+  .then(response => response.json())
+  .then(data => {
+    if (data.result === true) {
+      let sum = 0;
+      for (let i = 0; i < data.cart; i++) {
+        document.querySelector("#ticket-container").innerHTML += `
+    <div class='tickets'>
+    <p> ${data.cart[i].departure}>${data.cart[i].arrival}        ${data.cart[i].date}         ${data.cart[i].price}€</p>
+    <span class='deleteCart'>X</span>
+    </div>
+    `
+    sum += data.cart[i].price
+      }
+      document.querySelector("#ticket-container").innerHTML += `
+      <div id="total"> 
+      <p>Total:${sum}€</p>
+      <button id="purchase-btn" type='button'>Purchase</button>
+      </div>                  
+      `
+    }
+
+  })

@@ -4,15 +4,10 @@ flatpickr('.date-picker', {
 
 let results = document.querySelector("#results")
 
-function addBookEvent(a, b, c, d) {
+function addBookEvent() {
 	for (let i = 0; i < document.querySelectorAll('.book-btn').length; i++) {
 		document.querySelectorAll('.book-btn')[i].addEventListener('click', function () {
-			document.querySelector('#ticket-container').innerHTML += `
-            <div class="tickets">
-            <p>${a}>${b}        ${c}         ${d}</p>
-            <span class="deleteCarts">X</span>
-            </div>
-            `
+			
 		});
 	}
 }
@@ -41,7 +36,7 @@ document.querySelector("#search-btn").addEventListener("click", () => {
                     <button class="book-btn" type=button>Book</button>
                     </div>
                     `
-                    addBookEvent(data.allTrips[i].departure, data.allTrips[i].arrival, data.allTrips[i].date, data.allTrips[i].price)
+                    addBookEvent()
                 }
             } else {
                 results.innerHTML = `
