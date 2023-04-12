@@ -24,5 +24,3 @@ flatpickr('.date-picker', {
     dateFormat: 'd/m/Y'
   });
   
-
-document.querySelector
