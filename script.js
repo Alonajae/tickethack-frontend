@@ -13,14 +13,24 @@ document.getElementById("search-form").addEventListener("submit", async (e) => {
 function displayResults(trips) {
     const results = document.getElementById("results");
     results.innerHTML = "";
+    fetch('http://localhost:3000/trips', {
 
-    trips.forEach((trip) => {
-        const tripElement = document.createElement("div");
-        tripElement.textContent = `${trip.departure} - ${trip.arrival} (${trip.date})`;
-        results.appendChild(tripElement);
-    });
+        method: 'POST',
+
+        headers: { 'Content-Type': 'application/json' },
+
+        body: JSON.stringify(data)
+
+    })
+    .then(response => response.json())
+    .then(data => {
+        data.forEach((trip) => {
+            const tripElement = document.createElement("div");
+            tripElement.textContent = `${trip.departure} - ${trip.arrival} (${trip.date})`;
+            results.appendChild(tripElement);
+        });
+    })
 }
 flatpickr('.date-picker', {
     dateFormat: 'd/m/Y'
-  });
-  
+});
