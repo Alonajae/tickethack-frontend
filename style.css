@@ -21,11 +21,22 @@ body {
     grid-column-end: 20;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-#title {
-    color: green;
+#title a {
+        color: #50c68b;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    
+#title a:hover {
+    text-decoration: underline;
 }
+
+    
+
 
 
 
@@ -60,13 +71,25 @@ body {
     grid-row-end: 13;
     grid-column-start: 11;
     grid-column-end: 17;
-    border-radius: 5%;
+    border-radius: 3%;
 }
 
 #trajet {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
+.line {
+    height: 1px;
+    background-color: black;
+    margin-top: -2px;
+    margin-bottom: 2px;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
 #results {
     display: flex;
@@ -76,7 +99,7 @@ body {
 }
 
 #search-btn {
-    background-color: #4CAF50;
+    background-color: #50c68b;
     /* Green */
     border: none;
     color: white;
@@ -90,7 +113,7 @@ body {
 
 input[type=text] {
     border: none;
-    background-color: lightgrey;
+    background-color: white;
     color: dimgray;
     border-radius: 5%;
     border-bottom: 1px solid darkgrey;
@@ -101,8 +124,8 @@ input[type=text] {
 input[type=date]{
     border: none;
     height: 8vh;
-    margin-bottom: 20vh;
-    background-color: lightgrey;
+    margin-bottom: 10vh;
+    background-color: white;
     color: dimgray;
     font-size: x-large;
     border-radius: 5%;
@@ -113,4 +136,62 @@ input[type=date]{
 }
 #btn-bookings {
     border: none;
+}
+#left-block  {
+    display: flex;
+    align-items: center;
+   
+}
+#btn-cart a, #btn-bookings a {
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+}
+
+    
+#btn-cart a:hover, #btn-bookings a:hover {
+    text-decoration: underline;
+}
+
+.date-picker {
+    position: relative;
+}
+#results h3 {
+    font-size: 1rem;
+    
+}
+#description h3 {
+    margin-top: 8fr;
+}
+
+.green-line {
+    height: 3px;
+    background-color: #4CAF50;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+}
+.date-picker {
+    border: none;
+    background-color: white;
+    color: dimgray;
+    border-radius: 5%;
+    border-bottom: 1px solid darkgrey;
+    height: 8vh;
+    margin: 2px;
+    width: 100%;
+}
+
+.date-container {
+    position: relative;
 }

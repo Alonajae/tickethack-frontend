@@ -20,5 +20,9 @@ function displayResults(trips) {
         results.appendChild(tripElement);
     });
 }
+flatpickr('.date-picker', {
+    dateFormat: 'd/m/Y'
+  });
+  
 
 document.querySelector
