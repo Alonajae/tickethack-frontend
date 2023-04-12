@@ -20,3 +20,5 @@ function displayResults(trips) {
         results.appendChild(tripElement);
     });
 }
+
+document.querySelector
