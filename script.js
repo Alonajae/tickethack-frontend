@@ -19,12 +19,13 @@ document.querySelector("#search-btn").addEventListener("click", () => {
     })
         .then(response => response.json())
         .then(data => {
-            if (data) {
+            console.log(data)
+            if (data !== null) {
                 results.innerHTML = ""
-                for (let i=0; i< data.length ; i++) {
+                for (let i=0; i< data.allTrips.length ; i++) {
                     results.innerHTML += `
                     <div class="trip-container"> 
-                    <p>${data[i].departure} > ${data[i].arrival}  ${data[i].date}  ${data[i].price}€</p>
+                    <p>${data.allTrips[i].departure} > ${data.allTrips[i].arrival}  ${data.allTrips[i].date}  ${data.allTrips[i].price}€</p>
                     <button class="book-btn" type=button>Book</button>
                     </div>
                     `
