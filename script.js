@@ -21,14 +21,14 @@ document.querySelector("#search-btn").addEventListener("click", () => {
         .then(data => {
             results.innerHTML = ""
             if (data) {
-                data.forEach((trip) => {
+                for (let i=0; i< data.length ; i++) {
                     results.innerHTML += `
                     <div class="trip-container"> 
-                    <p>${trip.departure} > ${trip.arrival}  ${trip.date}  ${trip.price}€</p>
+                    <p>${data[i].departure} > ${data[i].arrival}  ${data[i].date}  ${data[i].price}€</p>
                     <button class="book-btn" type=button>Book</button>
                     </div>
                     `
-                })
+                }
             } else {
                 results.innerHTML += `
                 <div id="img-container">
