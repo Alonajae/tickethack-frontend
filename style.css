@@ -125,6 +125,7 @@ body {
 
 
 #results {
+    overflow-y: scroll hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -236,4 +237,9 @@ input[type=date]{
     color: white;
     text-align: center;
     text-decoration: none;
+}
+
+.trip-container {
+    display: flex;
+    margin: 1vh;
 }

@@ -19,7 +19,6 @@ document.querySelector("#search-btn").addEventListener("click", () => {
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             if (data.result=== true) {
                 results.innerHTML = ""
                 for (let i=0; i< data.allTrips.length ; i++) {
