@@ -19,8 +19,8 @@ document.querySelector("#search-btn").addEventListener("click", () => {
     })
         .then(response => response.json())
         .then(data => {
-            results.innerHTML = ""
             if (data) {
+                results.innerHTML = ""
                 for (let i=0; i< data.length ; i++) {
                     results.innerHTML += `
                     <div class="trip-container"> 
@@ -30,7 +30,7 @@ document.querySelector("#search-btn").addEventListener("click", () => {
                     `
                 }
             } else {
-                results.innerHTML += `
+                results.innerHTML = `
                 <div id="img-container">
                 <img src="./images/ntofound.png">
                 </div>
