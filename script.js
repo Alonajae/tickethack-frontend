@@ -41,16 +41,3 @@ document.querySelector("#search-btn").addEventListener("click", () => {
             }
         })
 });
-
-
-/*
- e.preventDefault();
-    const departure = document.getElementById("departure").value;
-    const arrival = document.getElementById("arrival").value;
-    const date = document.getElementById("date").value;
-
-    const response = await fetch(`/api/trips?departure=${departure}&arrival=${arrival}&date=${date}`);
-    const trips = await response.json();
-
-    displayResults(trips);
-*/
