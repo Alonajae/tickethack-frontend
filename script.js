@@ -4,7 +4,7 @@ flatpickr('.date-picker', {
 
 let results = document.querySelector("#results")
 
-function addBookEvent(a, b, c, d) {
+function addBookEvent(a, b, c, d, list) {
     let bookBtns = document.querySelectorAll('.book-btn')
     for (let i = 0; i < bookBtns.length; i++) {
         bookBtns[i].addEventListener('click', function () {
@@ -43,7 +43,6 @@ document.querySelector("#search-btn").addEventListener("click", () => {
                     <button class="book-btn" type=button>Book</button>
                     </div>
                     `
-                    addBookEvent(departure, arrival, data.allTrips[i].date, data.allTrips[i].price)
                 }
             } else {
                 results.innerHTML = `
