@@ -4,6 +4,16 @@ flatpickr('.date-picker', {
 
 let results = document.querySelector("#results")
 
+function addBookEvent(a, b, c, d) {
+	for (let i = 0; i < document.querySelectorAll('.book-btn').length; i++) {
+		document.querySelectorAll('.book-btn')[i].addEventListener('click', function () {
+			document.querySelector('#ticket-container').innerHTML += `
+            <p>${a}>${b}        ${c}         ${d}</p>
+            `
+		});
+	}
+}
+
 document.querySelector("#search-btn").addEventListener("click", () => {
     let departure = document.getElementById("departure").value;
     let arrival = document.querySelector("#arrival").value;
@@ -40,3 +50,4 @@ document.querySelector("#search-btn").addEventListener("click", () => {
             }
         })
 });
+
