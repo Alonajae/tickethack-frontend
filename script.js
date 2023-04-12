@@ -8,12 +8,12 @@ function addBookEvent(a, b, c, d) {
     let bookBtns = document.querySelectorAll('.book-btn')
     for (let i = 0; i < bookBtns.length; i++) {
         bookBtns[i].addEventListener('click', function () {
-            const newBook = new Cart{
+            const newBook = new Cart({
                 departure: a,
                 arrival: b,
                 date: c,
                 price: d
-            }
+            })
             newBook.save()
         });
     }
@@ -43,7 +43,7 @@ document.querySelector("#search-btn").addEventListener("click", () => {
                     <button class="book-btn" type=button>Book</button>
                     </div>
                     `
-                    addBookEvent(data.allTrips[i].departure, data.allTrips[i].arrival, data.allTrips[i].date, data.allTrips[i].price)
+                    addBookEvent(departure, arrival, data.allTrips[i].date, data.allTrips[i].price)
                 }
             } else {
                 results.innerHTML = `
