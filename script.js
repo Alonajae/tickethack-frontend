@@ -20,7 +20,7 @@ document.querySelector("#search-btn").addEventListener("click", () => {
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            if (data !== null) {
+            if (data.result=== true) {
                 results.innerHTML = ""
                 for (let i=0; i< data.allTrips.length ; i++) {
                     results.innerHTML += `
@@ -33,7 +33,7 @@ document.querySelector("#search-btn").addEventListener("click", () => {
             } else {
                 results.innerHTML = `
                 <div id="img-container">
-                <img src="./images/ntofound.png">
+                <img src="./images/notfound.png">
                 </div>
                 <div class="green-line"></div>
                 <h3>No trip found.</h3>
